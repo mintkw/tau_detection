@@ -3,11 +3,11 @@ def imageData = getCurrentImageData()
 
 // Define output path (here, relative to project)
 def name = GeneralTools.getNameWithoutExtension(imageData.getServer().getMetadata().getName())
-def pathOutput = buildFilePath("/Users/kwanwynn.tan.21/Desktop/qupath", 'tiles', name)
+// def pathOutput = buildFilePath(/PATH_TO_OUTPUT_DIRECTORY/, 'tiles', name)
 mkdirs(pathOutput)
 
 // Define output resolution in calibrated units (e.g. µm if available)
-double requestedPixelSize = 2.0
+double requestedPixelSize = 2.0  // reduce this for better resolution
 
 // Convert output resolution to a downsample factor
 double pixelSize = imageData.getServer().getPixelCalibration().getAveragedPixelSize()
